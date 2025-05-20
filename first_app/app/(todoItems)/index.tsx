@@ -4,7 +4,6 @@ import { useFocusEffect } from '@react-navigation/native';
 import { getTodoItems } from '@/utils/todoItems/apiClient';
 import { TodoItem } from '@/types/TodoItem';
 
-//Index screen for Todo Items
 export default function TodoItemsIndexScreen() {
     const [todoItems, setTodoItems] = useState<TodoItem[]>([]);
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
