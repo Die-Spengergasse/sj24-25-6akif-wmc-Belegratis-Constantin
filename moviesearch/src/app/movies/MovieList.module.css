@@ -1,0 +1,37 @@
+.movielist {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #1c1c1c;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    color: #f5f5f5;
+    font-family: 'Arial', sans-serif;
+}
+
+.movies {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1em;
+}
+
+.movie {
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    text-align: center;
+}
+
+.moviePoster img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.movieTitle {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #e50914;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    margin-top: 0.5rem;
+}
