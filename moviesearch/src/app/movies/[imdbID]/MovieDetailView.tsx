@@ -1,6 +1,7 @@
 import { MovieDetail } from "@/app/types/MovieDetail";
 import styles from "./MovieDetailView.module.css";
 
+
 interface MovieDetailViewProps {
     movie: MovieDetail;
 }
