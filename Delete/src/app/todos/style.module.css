@@ -1,0 +1,66 @@
+.categories select {
+  display: block;
+  margin: 20px auto;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.categories ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.categories li {
+  background-color: #fff;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.categories li h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #0070f3;
+}
+
+.categories li p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.categories .overdue {
+  border: 2px solid red;
+  background-color: hsl(0, 100%, 90%);
+}
+
+.categories .categoryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.categories .deleteIcon,
+.categories .editIcon {
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 18px;
+  color: #0070f3;
+}
+
+.categories .deleteIcon:hover,
+.categories .editIcon:hover {
+  color: #005bb5;
+}
+
+.categories .rowDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.categories .error {
+    color: red;
+    font-size: 14px;
+}
