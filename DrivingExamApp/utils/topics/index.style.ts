@@ -1,23 +1,32 @@
-import { StyleSheet } from 'react-native';
+// utils/topics/index.style.ts
+import { StyleSheet, Platform, StatusBar } from 'react-native';
+
+const STATUSBAR_HEIGHT = Platform.OS === 'android' ? StatusBar.currentHeight ?? 24 : 44;
 
 export default StyleSheet.create({
     container: {
         flex: 1,
-        padding: 16,
-    },
-    header: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        marginBottom: 12,
+        paddingTop: STATUSBAR_HEIGHT,
+        paddingHorizontal: 16,
+        backgroundColor: '#f9fafb',
     },
     topicItem: {
-        padding: 12,
-        backgroundColor: '#f1f1f1',
-        marginVertical: 8,
-        borderRadius: 8,
+        backgroundColor: '#ffffff',
+        padding: 20,
+        borderRadius: 16,
+        marginBottom: 16,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 8,
+        elevation: 3,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
     },
     topicTitle: {
-        fontSize: 18,
+        fontSize: 16,
         fontWeight: '600',
+        color: '#111827',
     },
 });

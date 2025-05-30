@@ -1,67 +1,79 @@
-import { StyleSheet } from "react-native";
+// utils/questions/index.style.ts
+import { StyleSheet, Platform, StatusBar } from "react-native";
+
+const STATUSBAR_HEIGHT = Platform.OS === 'android' ? StatusBar.currentHeight ?? 24 : 44;
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 16,
-        backgroundColor: "#f2f2f2",
+        paddingTop: STATUSBAR_HEIGHT + 24,
+        paddingHorizontal: 16,
+        backgroundColor: "#f9fafb",
     },
     questionItem: {
         backgroundColor: "#ffffff",
-        borderRadius: 12,
-        padding: 20,
-        marginBottom: 20,
-        elevation: 3, // Android
-        shadowColor: "#000", // iOS
+        borderRadius: 16,
+        padding: 24,
+        marginBottom: 24,
+        shadowColor: "#000",
         shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.1,
-        shadowRadius: 4,
+        shadowOpacity: 0.08,
+        shadowRadius: 6,
+        elevation: 2,
     },
     questionTitle: {
-        fontSize: 18,
-        fontWeight: "bold",
-        color: "#1f1f1f",
-        marginBottom: 12,
+        fontSize: 20,
+        fontWeight: "700",
+        color: "#111827",
+        marginBottom: 16,
+        textAlign: "left",
     },
     questionDetails: {
         flexDirection: "row",
         justifyContent: "space-between",
-        marginBottom: 12,
+        marginBottom: 16,
     },
     questionNumber: {
-        fontSize: 13,
-        color: "#888",
+        fontSize: 14,
+        color: "#6b7280",
     },
     questionPoints: {
-        fontSize: 13,
-        color: "#888",
+        fontSize: 14,
+        color: "#6b7280",
     },
     questionAnswers: {
-        marginTop: 12,
+        marginTop: 8,
     },
     answerItem: {
-        padding: 12,
-        borderRadius: 8,
-        marginBottom: 10,
+        padding: 16,
+        borderRadius: 12,
+        marginBottom: 12,
         borderWidth: 1,
-        borderColor: "#ccc",
+        borderColor: "#d1d5db",
     },
     answerText: {
-        fontSize: 15,
-        color: "#1f1f1f",
+        fontSize: 16,
+        color: "#1f2937",
     },
-    nextButton: {
-        marginTop: 20,
-        alignSelf: "center",
-        width: "60%",
+    button: {
+        padding: 15,
+        backgroundColor: '#2196F3',
+        borderRadius: 8,
+        alignItems: 'center',
+        marginTop: 10,
+    },
+    buttonText: {
+        color: 'white',
+        fontSize: 16,
+        fontWeight: 'bold',
     },
     questionImage: {
         width: '100%',
         height: 200,
-        marginBottom: 12,
-        borderRadius: 8,
+        marginBottom: 16,
+        borderRadius: 12,
+        backgroundColor: "#e5e7eb",
     },
-
 });
 
 export default styles;

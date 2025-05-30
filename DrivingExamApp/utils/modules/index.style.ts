@@ -1,23 +1,34 @@
-import { StyleSheet } from 'react-native';
+// utils/modules/index.style.ts
+import { StyleSheet, Dimensions, Platform, StatusBar } from 'react-native';
+
+const STATUSBAR_HEIGHT = Platform.OS === 'android' ? StatusBar.currentHeight ?? 24 : 44;
 
 export default StyleSheet.create({
     container: {
         flex: 1,
-        padding: 16,
-        backgroundColor: '#fff',
+        paddingHorizontal: 16,
+        paddingTop: STATUSBAR_HEIGHT + 24, // Mehr Abstand oben
+        backgroundColor: '#f9fafb',
     },
     moduleCard: {
-        padding: 16,
-        backgroundColor: '#f5f5f5',
-        borderRadius: 10,
-        marginBottom: 12,
+        padding: 20,
+        backgroundColor: '#ffffff',
+        borderRadius: 16,
+        marginBottom: 16,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 8,
+        elevation: 3,
     },
     title: {
         fontSize: 18,
-        fontWeight: 'bold',
+        fontWeight: '600',
+        color: '#1f2937',
     },
     description: {
-        marginTop: 4,
-        color: '#555',
+        marginTop: 6,
+        fontSize: 14,
+        color: '#6b7280',
     },
 });

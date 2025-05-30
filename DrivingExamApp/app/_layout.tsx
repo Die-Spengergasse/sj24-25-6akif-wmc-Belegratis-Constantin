@@ -4,6 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 export default function RootLayout() {
   return (
       <Tabs
+          initialRouteName={"index"}
           screenOptions={{
             headerShown: false,
             tabBarActiveTintColor: '#007AFF',

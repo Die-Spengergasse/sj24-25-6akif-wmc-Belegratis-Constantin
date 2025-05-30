@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { isErrorResponse } from "@/utils/apiClient";
 import { getQuestionsForTopic, checkAnswer } from "@/utils/questions/apiClient";
 import { Question } from "@/types/Question";
-import { View, Text, TouchableOpacity, Button, Alert, Image } from "react-native";
+import {View, Text, TouchableOpacity, Button, Alert, Image, Pressable} from "react-native";
 import styles from "@/utils/questions/index.style";
 import { Answer } from "@/types/Answer";
 
@@ -144,11 +144,13 @@ export default function QuestionsScreen() {
             </View>
 
             {!checkResult ? (
-                <Button title="Antwort prüfen" onPress={submitAnswers} />
+                <Pressable onPress={submitAnswers} style={styles.button}>
+                <Text style={styles.buttonText}>Zurück zur Modulauswahl</Text>
+                </Pressable>
             ) : (
-                <View style={styles.nextButton}>
-                    <Button title="Nächste Frage" onPress={handleNextQuestion} />
-                </View>
+                <Pressable onPress={handleNextQuestion} style={styles.button}>
+                    <Text style={styles.buttonText}>Zurück zur Modulauswahl</Text>
+                </Pressable>
             )}
         </View>
     );
