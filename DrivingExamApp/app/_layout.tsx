@@ -21,16 +21,7 @@ export default function RootLayout() {
                 options={{
                     title: 'Module',
                     tabBarIcon: ({color, size}) => (
-                        <Ionicons name="book" color={color} size={size}/>
-                    ),
-                }}
-            />
-            <Tabs.Screen
-                name="index"
-                options={{
-                    title: 'Home',
-                    tabBarIcon: ({color, size}) => (
-                        <Ionicons name="home" color={color} size={size}/>
+                        <Ionicons name="book-outline" color={color} size={size}/>
                     ),
                 }}
             />
@@ -39,7 +30,24 @@ export default function RootLayout() {
                 options={{
                     title: 'Prüfung',
                     tabBarIcon: ({color, size}) => (
-                        <Ionicons name="checkbox-outline" color={color} size={size}/>
+                        <Ionicons name="clipboard-outline" color={color} size={size}/>                    ),
+                }}
+            />
+            <Tabs.Screen
+                name="index"
+                options={{
+                    title: 'Home',
+                    tabBarIcon: ({color, size}) => (
+                        <Ionicons name="home-outline" color={color} size={size}/>
+                    ),
+                }}
+            />
+            <Tabs.Screen
+                name="(examHistory)"
+                options={{
+                    title: 'History',
+                    tabBarIcon: ({color, size}) => (
+                        <Ionicons name="time-outline" color={color} size={size}/>
                     ),
                 }}
             />
@@ -48,7 +56,7 @@ export default function RootLayout() {
                 options={{
                     title: 'Profil',
                     tabBarIcon: ({color, size}) => (
-                        <Ionicons name="checkbox-outline" color={color} size={size}/>
+                        <Ionicons name="person-outline" color={color} size={size}/>
                     ),
                 }}
             />

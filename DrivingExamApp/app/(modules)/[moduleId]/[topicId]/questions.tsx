@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { isErrorResponse } from "@/utils/apiClient";
 import { getQuestionsForTopic, checkAnswer } from "@/utils/questions/apiClient";
 import { Question } from "@/types/Question";
-import {View, Text, TouchableOpacity, Button, Alert, Image, Pressable} from "react-native";
+import { View, Text, TouchableOpacity, Button, Alert, Image, Pressable, ScrollView } from "react-native";
 import styles from "@/utils/questions/index.style";
 import { Answer } from "@/types/Answer";
 
@@ -92,7 +92,7 @@ export default function QuestionsScreen() {
     }
 
     return (
-        <View style={styles.container}>
+        <ScrollView style={styles.container}>
             {currentQuestion.imageUrl ? (
                 <Image
                     source={{ uri: currentQuestion.imageUrl }}
@@ -145,13 +145,13 @@ export default function QuestionsScreen() {
 
             {!checkResult ? (
                 <Pressable onPress={submitAnswers} style={styles.button}>
-                <Text style={styles.buttonText}>Zurück zur Modulauswahl</Text>
+                    <Text style={styles.buttonText}>Frage prüfen</Text>
                 </Pressable>
             ) : (
                 <Pressable onPress={handleNextQuestion} style={styles.button}>
-                    <Text style={styles.buttonText}>Zurück zur Modulauswahl</Text>
+                    <Text style={styles.buttonText}>Nächste Frage</Text>
                 </Pressable>
             )}
-        </View>
+        </ScrollView>
     );
 }

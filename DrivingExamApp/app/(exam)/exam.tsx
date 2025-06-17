@@ -6,6 +6,7 @@ import { getExamQuestions } from '@/utils/exam/apiClient';
 import { checkAnswer } from '@/utils/questions/apiClient';
 import { isErrorResponse } from '@/utils/apiClient';
 import styles from '../../utils/exam/index.style';
+import { saveExamResult } from '@/utils/exam/storage';
 
 type CheckResult = Record<string, boolean>;
 
@@ -103,7 +104,8 @@ export default function ExamScreen() {
             </View>
         );
 
-    if (finished)
+    if (finished) {
+        saveExamResult(earnedPoints, totalPoints);
         return (
             <View style={styles.centerContainer}>
                 <Text style={styles.finishedTitle}>Prüfung beendet!</Text>
@@ -115,6 +117,7 @@ export default function ExamScreen() {
                 </Pressable>
             </View>
         );
+    }
 
     if (!currentQuestion)
         return (
