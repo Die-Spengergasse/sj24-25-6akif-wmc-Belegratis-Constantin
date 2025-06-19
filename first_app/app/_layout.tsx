@@ -16,7 +16,7 @@ export default function RootLayout() {
             <Tabs.Screen
                 name="about"
                 options={{
-                    title: 'About',
+                    title: 'Index',
                     tabBarIcon: ({ color, size }) => (
                         <Ionicons name="information-circle" color={color} size={size} />
                     ),
